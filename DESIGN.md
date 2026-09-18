@@ -9,7 +9,7 @@
 1. **Precision before pace.** Each screen has one dominant decision and explicit state.
 2. **Evidence, not celebration.** Results expose topic performance and missed reasoning; no badges, streaks, confetti, or readiness claims.
 3. **The bank survives.** Offline/no-token use remains first-class and AI fallback is named.
-4. **Native familiarity.** Semantic fieldsets, radio controls, buttons, progress, and headings preserve expected keyboard and screen-reader behavior.
+4. **Native familiarity.** Streamlit radio controls, buttons, progress, labels, status messages, and headings preserve expected keyboard and screen-reader behavior.
 
 ## Tokens
 
@@ -21,8 +21,15 @@
 
 ## Layout and components
 
-Desktop setup uses an asymmetric two-column instrument/work-sheet composition; mobile collapses to a single task stream. Quiz content is held to 880 px and one question. Cards are not page scaffolding: lists use rules and state fills. Primary controls are dark ink; cyan is reserved for selection and progress. Focus rings are 3 px blue with offset.
+Desktop setup uses an asymmetric two-column instrument/work-sheet composition; mobile collapses
+to a single task stream. Quiz content stays focused on one question. Cards are not page
+scaffolding: lists use rules and state fills. Primary controls are dark ink; cyan is reserved
+for selection and progress. Focus rings are 3 px blue with offset. Static CSS is the only
+unsafe-HTML use; generated question and rationale text goes through Streamlit's safe renderers.
 
 ## Motion and access
 
-Only progress width and loading skeleton opacity move, and both stop under `prefers-reduced-motion`. Feedback uses `aria-live`; errors use alerts. Color never carries correctness alone. Target sizes are at least 44 px for primary actions, and layouts remain usable from 320 px.
+Only Streamlit's native progress behavior may move, and custom transitions stop under
+`prefers-reduced-motion`. Feedback uses explicit Correct/Not quite copy and native status
+containers. Color never carries correctness alone. Primary actions are at least 44 px, and
+layouts remain usable from 320 px.
