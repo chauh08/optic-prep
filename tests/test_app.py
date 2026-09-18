@@ -4,8 +4,9 @@ from streamlit.testing.v1 import AppTest
 def test_streamlit_setup_smoke():
     app = AppTest.from_file("app.py").run(timeout=15)
     assert not app.exception
-    assert app.title[0].value == "Set the focus. Test the fundamentals."
-    assert app.button[0].label == "Start practice →"
+    assert app.title[0].value == "Practice with precision."
+    assert app.button[0].label == "Start practice"
+    assert any("97" in markdown.value for markdown in app.markdown)
 
 
 def test_curated_quiz_can_start_and_answer():

@@ -3,6 +3,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from opticprep.models import Question
+from opticprep.variants import NUMERIC_VARIANTS
 
 
 @lru_cache(maxsize=1)
@@ -11,4 +12,4 @@ def load_questions() -> tuple[Question, ...]:
     return tuple(Question.model_validate(item) for item in json.loads(path.read_text(encoding="utf-8")))
 
 
-CURATED_QUESTIONS = load_questions()
+CURATED_QUESTIONS = load_questions() + NUMERIC_VARIANTS

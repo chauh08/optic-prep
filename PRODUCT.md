@@ -6,11 +6,17 @@ OpticPrep is a Streamlit study tool for people preparing for the ABO Basic Certi
 
 ## Audience and job
 
-Candidates use short, configurable sessions to expose knowledge gaps across optics fundamentals, ophthalmic lenses, frame fitting and measurements, dispensing, and safety or regulatory basics. The core loop is: configure → answer → understand the rationale → inspect results → retry missed material.
+Candidates use short, configurable sessions to expose knowledge gaps across optics fundamentals,
+ophthalmic lenses, frame fitting and measurements, dispensing, ocular anatomy and refractive
+conditions, instrumentation and verification, and safety or regulatory basics. The core loop
+is: configure → answer → understand the rationale → inspect results → retry missed material.
 
 ## Shipped scope
 
-- 33 original four-option questions, each with one answer, rationale, topic, and difficulty.
+- 97 original four-option questions, each with one answer, rationale, topic, and difficulty.
+- Twelve deterministic numeric variants use locally evaluated original templates for focal
+  power, induced prism, frame PD, and prescription transposition.
+- Seven topics with foundation, applied, and challenge material available in every topic.
 - Configurable question count, topic selection, difficulty mix, and curated or AI-enhanced source.
 - One-question-at-a-time practice with keyboard-accessible native controls and immediate feedback.
 - Results with overall score, topic breakdown, missed review, and retry.
