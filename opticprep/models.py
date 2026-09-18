@@ -7,6 +7,8 @@ TOPICS = (
     "Ophthalmic lenses",
     "Frame fitting & measurements",
     "Dispensing",
+    "Ocular anatomy & refractive conditions",
+    "Instrumentation & verification",
     "Safety & regulatory basics",
 )
 DIFFICULTIES = ("foundation", "applied", "challenge")
@@ -16,6 +18,8 @@ Topic = Literal[
     "Ophthalmic lenses",
     "Frame fitting & measurements",
     "Dispensing",
+    "Ocular anatomy & refractive conditions",
+    "Instrumentation & verification",
     "Safety & regulatory basics",
 ]
 Difficulty = Literal["foundation", "applied", "challenge"]

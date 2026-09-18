@@ -10,7 +10,7 @@ from opticprep.questions import CURATED_QUESTIONS
 from opticprep.quiz import merge_unique, score_questions, select_questions
 
 st.set_page_config(
-    page_title="OpticPrep · ABO Basic practice",
+    page_title="OpticPrep · Opticianry practice",
     page_icon="◉",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -24,17 +24,20 @@ def load_css() -> None:
         :root {
           --paper:#f6f3eb; --panel:#fffdf7; --ink:#172326; --muted:#536061;
           --cyan:#007f82; --cyan-dark:#005e60; --success:#236d50; --error:#a53c32;
+          --rule:#8a9694; --soft-rule:#ced4cf; --cyan-wash:#dcebe8;
         }
         .stApp { background:var(--paper); color:var(--ink); }
-        .block-container { max-width:1120px; padding-top:1.6rem; padding-bottom:4rem; }
+        .block-container { max-width:1160px; padding-top:1.25rem; padding-bottom:4rem; }
         header[data-testid="stHeader"] { background:transparent; }
         h1,h2,h3,p,label { color:var(--ink); }
-        h1 { letter-spacing:-.035em; line-height:1.02; max-width:18ch; }
-        h2 { letter-spacing:-.02em; margin-top:2rem; }
-        p, label, .stMarkdown { line-height:1.62; }
+        h1 { font-size:3.65rem; letter-spacing:-.038em; line-height:1.02; max-width:15ch;
+          text-wrap:balance; margin-bottom:1rem; }
+        h2 { letter-spacing:-.025em; margin-top:2.25rem; }
+        h3 { letter-spacing:-.012em; }
+        p, label, .stMarkdown { line-height:1.58; }
         [data-testid="stForm"] { background:var(--panel); border:1px solid var(--ink);
-          border-radius:0; padding:clamp(1rem,3vw,2rem); box-shadow:7px 7px 0 #bed3d0; }
-        [data-testid="stMetric"] { background:transparent; border-top:1px solid #8a9694; padding-top:.75rem; }
+          border-radius:0; padding:clamp(1rem,3vw,1.65rem); box-shadow:8px 9px 18px rgba(23,35,38,.10); }
+        [data-testid="stMetric"] { background:transparent; border-top:1px solid var(--rule); padding-top:.75rem; }
         [data-testid="stMetricValue"] { color:var(--ink); letter-spacing:-.04em; }
         .stButton > button, [data-testid="stFormSubmitButton"] button {
           min-height:46px; border-radius:0; border:1px solid var(--ink); font-weight:700;
@@ -42,34 +45,67 @@ def load_css() -> None:
         .stButton > button[kind="primary"], [data-testid="stFormSubmitButton"] button {
           background:var(--ink); color:var(--panel);
         }
+        .stButton > button:hover, [data-testid="stFormSubmitButton"] button:hover {
+          border-color:var(--cyan); color:var(--cyan-dark);
+        }
+        .stButton > button[kind="primary"]:hover, [data-testid="stFormSubmitButton"] button:hover {
+          background:var(--cyan-dark); color:#fff; border-color:var(--cyan-dark);
+        }
+        .stButton > button:disabled { opacity:.55; cursor:not-allowed; }
         button:focus-visible, input:focus-visible, [role="radiogroup"]:focus-visible {
           outline:3px solid #005fcc !important; outline-offset:3px;
         }
         [data-testid="stProgress"] > div > div { background:var(--cyan); }
         [data-testid="stAlert"] { border-radius:0; border:1px solid currentColor; }
-        hr { border-color:#8a9694; }
+        hr { border-color:var(--rule); }
         .brand { display:flex; align-items:center; gap:.7rem; font-size:1.25rem; font-weight:800;
-          letter-spacing:-.02em; padding-bottom:.8rem; border-bottom:1px solid #8a9694; margin-bottom:2.5rem; }
+          letter-spacing:-.02em; }
         .lens { width:2rem; height:2rem; display:grid; place-items:center; border:2px solid var(--cyan);
           border-radius:50%; color:var(--cyan-dark); font-size:.75rem; }
-        .calibration { color:var(--cyan-dark); letter-spacing:.35rem; font-size:.72rem; }
-        .intro { max-width:58ch; font-size:1.08rem; color:var(--muted); }
-        .readout { margin-top:2rem; border-top:1px solid #8a9694; padding-top:1rem; }
-        .readout strong { font-size:2.8rem; margin-right:.7rem; letter-spacing:-.05em; }
+        .masthead { padding-bottom:.85rem; border-bottom:1px solid var(--rule); margin-bottom:2.1rem; }
+        .calibration { color:var(--cyan-dark); letter-spacing:.24rem; font-size:.72rem;
+          text-align:right; font-variant-numeric:tabular-nums; }
+        .intro { max-width:58ch; font-size:1.08rem; color:var(--muted); margin-bottom:1.5rem; }
+        .bench-rule { height:28px; margin:1.7rem 0 1rem; border-top:1px solid var(--cyan-dark);
+          background:repeating-linear-gradient(90deg, var(--cyan-dark) 0 1px, transparent 1px 24px);
+          background-size:auto 9px; background-repeat:repeat-x; }
+        .instrument { display:grid; grid-template-columns:auto 1fr; gap:.85rem 1.1rem;
+          align-items:center; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+          padding:.85rem 0; max-width:32rem; }
+        .instrument strong { font-size:2.65rem; letter-spacing:-.05em; line-height:1; }
+        .instrument span { color:var(--muted); font-size:.9rem; }
+        .instrument b { color:var(--cyan-dark); font-size:.72rem; letter-spacing:.08em;
+          text-transform:uppercase; }
+        .setup-note { max-width:64ch; color:var(--muted); font-size:.86rem; margin-top:1rem; }
+        .sheet-head { display:flex; align-items:baseline; justify-content:space-between;
+          gap:1rem; border-bottom:1px solid var(--soft-rule); margin-bottom:1rem; }
+        .sheet-head strong { font-size:1.32rem; letter-spacing:-.02em; }
+        .sheet-head span { color:var(--cyan-dark); font-size:.72rem; letter-spacing:.08em; }
+        .status-strip { display:flex; flex-wrap:wrap; gap:.45rem 1.25rem; margin:.6rem 0 1.35rem;
+          padding:.65rem 0; border-top:1px solid var(--soft-rule); border-bottom:1px solid var(--soft-rule);
+          color:var(--muted); font-size:.82rem; }
+        .status-strip b { color:var(--ink); font-weight:700; }
         .meta { text-transform:uppercase; font-size:.76rem; letter-spacing:.08em; color:var(--cyan-dark);
           word-spacing:.4rem; margin-bottom:.75rem; }
-        .question-copy { font-size:clamp(1.55rem,3vw,2.35rem); line-height:1.18; max-width:28ch;
-          letter-spacing:-.025em; margin:1.5rem 0; }
-        .rationale { background:#e6efe9; border:1px solid var(--success); padding:1rem 1.2rem; margin:1rem 0; }
-        .rationale.wrong { background:#f5e9e5; border-color:var(--error); }
-        .review { border-top:1px solid #8a9694; padding:1rem 0; }
-        .review p { margin:.25rem 0; }
-        .source-note { color:var(--muted); font-size:.88rem; }
-        .footer { border-top:1px solid #8a9694; margin-top:4rem; padding-top:1rem; color:var(--muted); font-size:.82rem; }
-        @media (max-width:640px) {
+        .question-station { border-top:1px solid var(--ink); padding-top:1rem; margin-top:.6rem; }
+        .question-station .counter { display:flex; justify-content:space-between; gap:1rem;
+          color:var(--muted); font-size:.83rem; }
+        .results-head { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:2rem;
+          align-items:end; border-bottom:1px solid var(--ink); padding-bottom:1.4rem; margin-bottom:.6rem; }
+        .score-dial { width:7.5rem; height:7.5rem; border:2px solid var(--cyan-dark);
+          border-radius:50%; display:grid; place-content:center; text-align:center; }
+        .score-dial strong { display:block; font-size:2.25rem; line-height:1; letter-spacing:-.05em; }
+        .score-dial span { color:var(--muted); font-size:.74rem; margin-top:.35rem; }
+        .section-rule { margin-top:2.4rem; padding-top:.7rem; border-top:1px solid var(--rule); }
+        .footer { border-top:1px solid var(--rule); margin-top:4rem; padding-top:1rem;
+          color:var(--muted); font-size:.82rem; max-width:78ch; }
+        @media (max-width:760px) {
           .block-container { padding:1rem 1rem 3rem; }
-          .brand { margin-bottom:1.5rem; }
-          h1 { font-size:2.25rem; }
+          .masthead { margin-bottom:1.35rem; }
+          h1 { font-size:2.55rem; }
+          .calibration { display:none; }
+          .results-head { grid-template-columns:1fr; }
+          .score-dial { width:6.5rem; height:6.5rem; }
         }
         @media (prefers-reduced-motion:reduce) {
           *,*::before,*::after { scroll-behavior:auto !important; transition:none !important; animation:none !important; }
@@ -132,7 +168,12 @@ def start_quiz(settings: dict) -> None:
         settings["difficulties"],
     )
     assembled = curated
-    notice = ""
+    notice = (
+        f"{len(curated)} curated questions match this setup; the requested set size was "
+        f"{settings['count']}."
+        if len(curated) < settings["count"]
+        else ""
+    )
     if settings["mode"] == "ai":
         try:
             generated = generate_questions(
@@ -147,6 +188,8 @@ def start_quiz(settings: dict) -> None:
                     f"AI enhancement supplied fewer validated items than requested. "
                     f"This set contains {len(assembled)} safe questions."
                 )
+            else:
+                notice = "This set combines validated AI-generated items with the curated bank."
         except AIUnavailable:
             notice = (
                 "AI enhancement was unavailable or did not pass validation. "
@@ -177,31 +220,41 @@ def render_header() -> None:
             unsafe_allow_html=True,
         )
     with right:
-        st.markdown('<div class="calibration">│╵│╵│ BASIC</div>', unsafe_allow_html=True)
+        st.markdown('<div class="calibration">0 · 5 · 10 · 15 mm</div>', unsafe_allow_html=True)
+    st.divider()
 
 
 def render_setup() -> None:
     settings = st.session_state.settings
     intro, sheet = st.columns([0.9, 1.1], gap="large", vertical_alignment="top")
     with intro:
-        st.title("Set the focus. Test the fundamentals.")
+        st.title("Practice with precision.")
         st.markdown(
-            '<p class="intro">Original practice questions for ABO Basic candidates, '
-            "built for deliberate review—not prediction or recall of any real exam.</p>",
+            '<p class="intro">Build a focused opticianry session, verify each answer, and leave '
+            "with a clear review list. Every curated item was written for OpticPrep—not copied, "
+            "recalled, or presented as examination content.</p>",
             unsafe_allow_html=True,
         )
         st.markdown(
-            f'<div class="readout"><strong>{len(CURATED_QUESTIONS)}</strong>'
-            "curated questions<br>available without AI</div>",
+            '<div class="bench-rule" aria-hidden="true"></div>'
+            f'<div class="instrument"><strong>{len(CURATED_QUESTIONS)}</strong>'
+            '<span><b>Curated bank</b><br>Original questions · available without AI</span>'
+            f'<strong>{len(TOPICS)}</strong><span><b>Coverage</b><br>Topics · three difficulty levels each</span></div>',
             unsafe_allow_html=True,
         )
-        st.caption(
-            "Settings are reflected in the page URL. Active answers and recent results remain "
-            "in this Streamlit session; a full browser refresh may clear them."
+        st.markdown(
+            '<p class="setup-note">Your setup choices are mirrored in the page URL. Answers and '
+            "recent results stay only in this Streamlit session; a refresh, disconnect, or server "
+            "restart may clear them.</p>",
+            unsafe_allow_html=True,
         )
     with sheet:
         with st.form("setup_form"):
-            st.subheader("Build a practice set")
+            st.markdown(
+                '<div class="sheet-head"><strong>Configure the set</strong>'
+                '<span>CALIBRATION SHEET</span></div>',
+                unsafe_allow_html=True,
+            )
             count = st.select_slider(
                 "Question count", options=[5, 10, 15, 20, 25, 30], value=settings["count"]
             )
@@ -215,7 +268,9 @@ def render_setup() -> None:
                 index=1 if settings["mode"] == "ai" else 0,
                 help="AI-enhanced mode always falls back visibly to curated questions.",
             )
-            submitted = st.form_submit_button("Start practice →", type="primary", use_container_width=True)
+            submitted = st.form_submit_button(
+                "Start practice", type="primary", use_container_width=True
+            )
         if submitted:
             if not topics or not difficulties:
                 st.error("Select at least one topic and one difficulty.")
@@ -242,12 +297,20 @@ def render_quiz() -> None:
     questions: list[Question] = st.session_state.questions
     index = st.session_state.question_index
     question = questions[index]
+    source_label = "AI-generated" if question.source == "ai" else "Curated bank"
+    st.markdown('<div class="question-station"></div>', unsafe_allow_html=True)
     st.markdown(
-        f'<div class="meta">{question.topic} · {question.difficulty} · '
-        f'{"AI-generated" if question.source == "ai" else "Curated"}</div>',
+        f'<div class="meta">{question.topic} · {question.difficulty}</div>'
+        f'<div class="status-strip"><span>Source <b>{source_label}</b></span>'
+        f'<span>Set <b>{len(questions)} questions</b></span>'
+        '<span>Feedback <b>after submission</b></span></div>',
         unsafe_allow_html=True,
     )
-    st.write(f"**Question {index + 1} of {len(questions)}**")
+    st.markdown(
+        f'<div class="counter"><strong>Question {index + 1} of {len(questions)}</strong>'
+        f"<span>{round(100 * (index + 1) / len(questions))}% through set</span></div>",
+        unsafe_allow_html=True,
+    )
     st.progress((index + 1) / len(questions), text="Practice set progress")
     if st.session_state.notice and index == 0:
         st.info(st.session_state.notice)
@@ -279,7 +342,7 @@ def render_quiz() -> None:
             f"Correct answer: {question.options[question.correctIndex]}"
         )
         (st.success if correct else st.error)(feedback)
-        button_label = "See results →" if index == len(questions) - 1 else "Next question →"
+        button_label = "See results" if index == len(questions) - 1 else "Next question"
         if st.button(button_label, type="primary", use_container_width=True):
             if index == len(questions) - 1:
                 result = score_questions(questions, st.session_state.answers)
@@ -307,17 +370,25 @@ def render_results() -> None:
     questions = st.session_state.questions
     result = score_questions(questions, st.session_state.answers)
     percent = round(100 * result["correct"] / result["total"]) if result["total"] else 0
-    st.title("Session complete")
+    st.markdown(
+        '<div class="results-head"><div><h1>Session complete.</h1>'
+        '<p class="intro">Use the breakdown as a study map, not a readiness prediction. '
+        "Review missed reasoning, then build a new set when you are ready.</p></div>"
+        f'<div class="score-dial"><strong>{percent}%</strong><span>SESSION ACCURACY</span></div></div>',
+        unsafe_allow_html=True,
+    )
     score, rate, missed = st.columns(3)
     score.metric("Correct", f"{result['correct']} / {result['total']}")
     rate.metric("Accuracy", f"{percent}%")
     missed.metric("To review", len(result["missed"]))
+    st.markdown('<div class="section-rule"></div>', unsafe_allow_html=True)
     st.subheader("Topic breakdown")
     for row in result["by_topic"]:
         left, middle, right = st.columns([3, 5, 1], vertical_alignment="center")
         left.write(row["topic"])
         middle.progress(row["correct"] / row["total"])
         right.write(f"**{row['correct']}/{row['total']}**")
+    st.markdown('<div class="section-rule"></div>', unsafe_allow_html=True)
     st.subheader("Missed review")
     if not result["missed"]:
         st.success("Clear verification: no missed questions in this set.")
@@ -352,7 +423,9 @@ elif st.session_state.phase == "quiz":
 else:
     render_results()
 st.markdown(
-    '<div class="footer">Independent educational practice. Not affiliated with or endorsed by '
-    "ABO-NCLE. Not real exam content. Verify current standards and local requirements.</div>",
+    '<div class="footer"><strong>Educational practice only.</strong> OpticPrep is independent '
+    "and is not affiliated with or endorsed by ABO-NCLE. It does not reproduce or predict "
+    "certification examinations. Content is not medical, legal, or regulatory advice; verify "
+    "current standards, manufacturer guidance, and local requirements with qualified sources.</div>",
     unsafe_allow_html=True,
 )

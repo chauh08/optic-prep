@@ -17,6 +17,21 @@ def test_selection_respects_count_and_filters():
     assert all(question.difficulty == "foundation" for question in selected)
 
 
+def test_every_supported_filter_combination_returns_questions():
+    from opticprep.models import DIFFICULTIES, TOPICS
+
+    for topic in TOPICS:
+        for difficulty in DIFFICULTIES:
+            selected = select_questions(
+                CURATED_QUESTIONS,
+                5,
+                [topic],
+                [difficulty],
+                rng=random.Random(4),
+            )
+            assert selected, f"No questions for {topic} / {difficulty}"
+
+
 def test_scoring_and_topic_breakdown():
     questions = list(CURATED_QUESTIONS[:3])
     answers = {
@@ -30,9 +45,13 @@ def test_scoring_and_topic_breakdown():
     assert result["missed"] == questions[1:]
 
 
+def test_scoring_handles_an_empty_set():
+    result = score_questions([], {})
+    assert result == {"correct": 0, "total": 0, "by_topic": [], "missed": []}
+
+
 def test_merge_prefers_ai_and_rejects_duplicate_prompts():
     original = CURATED_QUESTIONS[0]
     duplicate = original.model_copy(update={"id": "ai-copy", "source": "ai"})
     result = merge_unique([original, CURATED_QUESTIONS[1]], [duplicate], 3)
     assert [item.id for item in result] == ["ai-copy", CURATED_QUESTIONS[1].id]
-

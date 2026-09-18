@@ -493,5 +493,525 @@
     "topic": "Safety & regulatory basics",
     "difficulty": "foundation",
     "source": "curated"
+  },
+  {
+    "id": "of-08",
+    "prompt": "A +3.00 D lens is viewed 10 mm away from its optical center. What prism is induced?",
+    "options": ["0.30 prism diopter", "3.00 prism diopters", "0.03 prism diopter", "30.00 prism diopters"],
+    "correctIndex": 1,
+    "rationale": "Prentice’s rule gives prism = 1.0 cm × 3.00 D = 3.00 prism diopters.",
+    "topic": "Optics fundamentals",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "of-09",
+    "prompt": "Which change increases the refractive power of a lens surface when all other factors remain constant?",
+    "options": ["A flatter curve", "A steeper curve", "A lower refractive index", "A larger diameter only"],
+    "correctIndex": 1,
+    "rationale": "A steeper surface has a shorter radius of curvature and therefore greater surface power.",
+    "topic": "Optics fundamentals",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "of-10",
+    "prompt": "A −2.00 D lens has an approximate focal length in air of:",
+    "options": ["−0.50 m", "−2.00 m", "+0.50 m", "+2.00 m"],
+    "correctIndex": 0,
+    "rationale": "Focal length is the reciprocal of power: 1 ÷ −2.00 = −0.50 meter.",
+    "topic": "Optics fundamentals",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "of-11",
+    "prompt": "A lens measures +3.00 D in the 090 meridian and +1.00 D in the 180 meridian. Which minus-cylinder form represents this power?",
+    "options": ["+3.00 −2.00 × 090", "+1.00 −2.00 × 090", "+1.00 +2.00 × 180", "+3.00 −1.00 × 180"],
+    "correctIndex": 0,
+    "rationale": "Use +3.00 D as the sphere at axis 090; the −2.00 D cylinder acts 90° away to produce +1.00 D in the 180 meridian.",
+    "topic": "Optics fundamentals",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "of-12",
+    "prompt": "A +5.00 D lens is moved 4 mm farther from the eye. Which qualitative effect is expected?",
+    "options": ["Its effective plus power increases", "Its effective plus power decreases", "Its cylinder axis rotates", "Its refractive index changes"],
+    "correctIndex": 0,
+    "rationale": "Moving a plus lens away from the eye increases its effective power at the corneal plane.",
+    "topic": "Optics fundamentals",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "of-13",
+    "prompt": "A ray enters a parallel-sided transparent slab obliquely and exits into air. Relative to the incident ray, the emerging ray is generally:",
+    "options": ["Parallel but laterally displaced", "Perpendicular with no displacement", "Returned toward the source", "Converged to a real focus"],
+    "correctIndex": 0,
+    "rationale": "Refraction at parallel surfaces produces lateral displacement while the exiting ray remains parallel to the incident ray.",
+    "topic": "Optics fundamentals",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "ol-08",
+    "prompt": "Which lens treatment is intended primarily to reduce reflected light from lens surfaces?",
+    "options": ["Anti-reflective coating", "Scratch-resistant coating", "Edge polish", "Ultraviolet tint"],
+    "correctIndex": 0,
+    "rationale": "Anti-reflective coatings reduce surface reflections and can improve light transmission.",
+    "topic": "Ophthalmic lenses",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "ol-09",
+    "prompt": "For the same prescription and shape, which change usually reduces center thickness in a plus lens?",
+    "options": ["Increasing blank diameter", "Using a smaller effective diameter", "Increasing decentration", "Adding edge thickness"],
+    "correctIndex": 1,
+    "rationale": "A smaller effective diameter generally permits a plus lens to be surfaced with less center thickness.",
+    "topic": "Ophthalmic lenses",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "ol-10",
+    "prompt": "A wearer reports colored fringes away from the optical center. Which material property is most directly relevant?",
+    "options": ["Abbe value", "Specific gravity", "Surface hardness", "Ultraviolet cutoff"],
+    "correctIndex": 0,
+    "rationale": "Abbe value describes chromatic dispersion; lower values are associated with more transverse chromatic aberration.",
+    "topic": "Ophthalmic lenses",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "ol-11",
+    "prompt": "In a conventional progressive lens, unwanted astigmatism is generally found:",
+    "options": ["Only at the fitting cross", "In peripheral regions beside the progression corridor", "Uniformly across the distance zone", "Only at the geometric center"],
+    "correctIndex": 1,
+    "rationale": "Progressive designs place distance and near zones along a corridor, with unwanted astigmatism mainly in peripheral regions.",
+    "topic": "Ophthalmic lenses",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "ol-12",
+    "prompt": "Why can excessive wrap require prescription compensation in higher-powered eyewear?",
+    "options": ["It changes lens material density", "It alters the lens orientation relative to the visual axis", "It removes the optical center", "It eliminates surface reflections"],
+    "correctIndex": 1,
+    "rationale": "Tilting a powered lens relative to the line of sight can induce changes in effective sphere and cylinder.",
+    "topic": "Ophthalmic lenses",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "fm-08",
+    "prompt": "A frame sits lower on one side because one temple is angled upward behind that ear. Which adjustment is most directly indicated?",
+    "options": ["Raise that temple bend", "Lower that temple bend", "Increase both lens powers", "Widen both eyewires"],
+    "correctIndex": 1,
+    "rationale": "Lowering the temple on the low-lens side can raise that side of the frame front; adjustments should be made incrementally.",
+    "topic": "Frame fitting & measurements",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "fm-09",
+    "prompt": "A frame has an eye size of 52 mm and a bridge size of 18 mm. Its frame PD is:",
+    "options": ["34 mm", "52 mm", "70 mm", "88 mm"],
+    "correctIndex": 2,
+    "rationale": "Frame PD is the sum of the boxed eye size and distance between lenses: 52 + 18 = 70 mm.",
+    "topic": "Frame fitting & measurements",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "fm-10",
+    "prompt": "A patient PD is 64 mm and frame PD is 70 mm. What is the monocular decentration for equal PDs?",
+    "options": ["2 mm inward", "3 mm inward", "6 mm inward", "3 mm outward"],
+    "correctIndex": 1,
+    "rationale": "Total inward decentration is 70 − 64 = 6 mm, or 3 mm for each lens.",
+    "topic": "Frame fitting & measurements",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "fm-11",
+    "prompt": "Which measurement most directly determines the minimum blank size for a centered edged lens?",
+    "options": ["Effective diameter of the lens shape", "Temple length", "Bridge depth alone", "Frame color"],
+    "correctIndex": 0,
+    "rationale": "Effective diameter, adjusted for required decentration, is central to determining minimum blank size.",
+    "topic": "Frame fitting & measurements",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "fm-12",
+    "prompt": "Which bridge observation is most useful when assessing how a frame rests on the nose?",
+    "options": ["Whether contact is even and comfortable", "Whether both lenses have the same power", "Whether the temples show a brand mark", "Whether the case closes tightly"],
+    "correctIndex": 0,
+    "rationale": "Even, comfortable bridge contact supports stable frame position without concentrated pressure.",
+    "topic": "Frame fitting & measurements",
+    "difficulty": "foundation",
+    "source": "curated"
+  },
+  {
+    "id": "di-07",
+    "prompt": "What should be checked first when a wearer reports that a new frame slides down?",
+    "options": ["Prescription expiration date", "Overall frame fit and support points", "Lens Abbe value", "Cylinder transposition"],
+    "correctIndex": 1,
+    "rationale": "Bridge contact, temple spread, and ear bends should be assessed before making targeted fit adjustments.",
+    "topic": "Dispensing",
+    "difficulty": "foundation",
+    "source": "curated"
+  },
+  {
+    "id": "di-08",
+    "prompt": "Before warming a frame for adjustment, the dispenser should first:",
+    "options": ["Identify the frame material", "Remove every coating", "Increase lens power", "Measure visual acuity"],
+    "correctIndex": 0,
+    "rationale": "Frame materials respond differently to heat, so identifying the material guides a safe adjustment method.",
+    "topic": "Dispensing",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "di-09",
+    "prompt": "A first-time progressive wearer should be advised to:",
+    "options": ["Move the head toward objects of interest while adapting", "Look only through the lens edges", "Wear the glasses only in darkness", "Expect every task to be clear without head movement"],
+    "correctIndex": 0,
+    "rationale": "Pointing the nose toward the task helps the wearer use the intended lens zones during adaptation.",
+    "topic": "Dispensing",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "di-10",
+    "prompt": "A new progressive wearer sees distance clearly but must lift the chin excessively to read. Which check is most relevant?",
+    "options": ["Fitting height and frame position", "Temple color", "Ultraviolet transmission only", "Distance acuity only"],
+    "correctIndex": 0,
+    "rationale": "An unsuitable fitting height or frame position can make the near zone difficult to access naturally.",
+    "topic": "Dispensing",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "di-11",
+    "prompt": "A high-minus wearer reports that objects seem smaller through new lenses. This is most consistent with:",
+    "options": ["Spectacle minification", "Chromatic adaptation", "Total internal reflection", "Increased accommodation only"],
+    "correctIndex": 0,
+    "rationale": "Minus spectacle lenses produce retinal image minification, which can be more noticeable at higher powers.",
+    "topic": "Dispensing",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "di-12",
+    "prompt": "A wearer has clear monocular vision but discomfort when both eyes are open. Which verification deserves priority?",
+    "options": ["Binocular prism and centration", "Frame color consistency", "Case dimensions", "Lens coating brand"],
+    "correctIndex": 0,
+    "rationale": "Unexpected prism or centration error can disrupt binocular comfort even when each eye sees clearly alone.",
+    "topic": "Dispensing",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "oa-01",
+    "prompt": "Which transparent structure provides most of the eye’s refractive power?",
+    "options": ["Cornea", "Iris", "Retina", "Optic nerve"],
+    "correctIndex": 0,
+    "rationale": "The air-cornea interface contributes most of the eye’s refractive power.",
+    "topic": "Ocular anatomy & refractive conditions",
+    "difficulty": "foundation",
+    "source": "curated"
+  },
+  {
+    "id": "oa-02",
+    "prompt": "Which structure changes shape during accommodation?",
+    "options": ["Crystalline lens", "Sclera", "Optic disc", "Choroid"],
+    "correctIndex": 0,
+    "rationale": "Accommodation changes crystalline-lens shape to adjust focus for near viewing.",
+    "topic": "Ocular anatomy & refractive conditions",
+    "difficulty": "foundation",
+    "source": "curated"
+  },
+  {
+    "id": "oa-03",
+    "prompt": "In uncomplicated myopia, distant light focuses:",
+    "options": ["In front of the retina", "Behind the retina", "Exactly on the retina without correction", "At the optic nerve only"],
+    "correctIndex": 0,
+    "rationale": "In myopia, the unaccommodated eye focuses distant parallel light in front of the retina.",
+    "topic": "Ocular anatomy & refractive conditions",
+    "difficulty": "foundation",
+    "source": "curated"
+  },
+  {
+    "id": "oa-04",
+    "prompt": "Presbyopia primarily reflects an age-related reduction in:",
+    "options": ["Accommodation", "Color vision", "Pupil count", "Corneal transparency"],
+    "correctIndex": 0,
+    "rationale": "Presbyopia is the gradual loss of accommodative ability with age.",
+    "topic": "Ocular anatomy & refractive conditions",
+    "difficulty": "foundation",
+    "source": "curated"
+  },
+  {
+    "id": "oa-05",
+    "prompt": "Which lens type generally corrects uncomplicated hyperopia?",
+    "options": ["Plus-powered lens", "Minus-powered lens", "Plano lens", "Base-down prism only"],
+    "correctIndex": 0,
+    "rationale": "Plus power converges light and is generally used to correct uncomplicated hyperopia.",
+    "topic": "Ocular anatomy & refractive conditions",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "oa-06",
+    "prompt": "Astigmatism is commonly associated with:",
+    "options": ["Different refractive powers in different meridians", "Complete absence of a crystalline lens", "Identical power in every meridian", "A blocked tear duct only"],
+    "correctIndex": 0,
+    "rationale": "Astigmatism occurs when the optical system has unequal power across principal meridians.",
+    "topic": "Ocular anatomy & refractive conditions",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "oa-07",
+    "prompt": "Which part of the retina is specialized for highest-detail central vision?",
+    "options": ["Fovea", "Optic disc", "Ora serrata", "Choroid"],
+    "correctIndex": 0,
+    "rationale": "The fovea has the dense cone specialization needed for high-acuity central vision.",
+    "topic": "Ocular anatomy & refractive conditions",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "oa-08",
+    "prompt": "Anisometropia describes:",
+    "options": ["A meaningful refractive difference between the two eyes", "Equal prescriptions in both eyes", "Loss of accommodation with age", "Inflammation of the eyelid"],
+    "correctIndex": 0,
+    "rationale": "Anisometropia is unequal refractive error between the eyes.",
+    "topic": "Ocular anatomy & refractive conditions",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "oa-09",
+    "prompt": "Aphakia means the eye lacks its:",
+    "options": ["Crystalline lens", "Cornea", "Iris", "Retina"],
+    "correctIndex": 0,
+    "rationale": "Aphakia is the absence of the natural crystalline lens.",
+    "topic": "Ocular anatomy & refractive conditions",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "oa-10",
+    "prompt": "Why may a large difference in spectacle power between eyes create binocular difficulty?",
+    "options": ["It can create unequal retinal image sizes", "It always changes iris color", "It removes all accommodation", "It prevents any lens coating"],
+    "correctIndex": 0,
+    "rationale": "Unequal spectacle magnification can create aniseikonia and interfere with comfortable binocular fusion.",
+    "topic": "Ocular anatomy & refractive conditions",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "oa-11",
+    "prompt": "Which pathway correctly traces light through the major transparent ocular structures?",
+    "options": ["Cornea, aqueous, crystalline lens, vitreous, retina", "Retina, vitreous, iris, cornea, lens", "Optic nerve, sclera, lens, retina, cornea", "Iris, optic nerve, aqueous, retina, lens"],
+    "correctIndex": 0,
+    "rationale": "Light normally passes through cornea, aqueous humor, crystalline lens, and vitreous before reaching the retina.",
+    "topic": "Ocular anatomy & refractive conditions",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "oa-12",
+    "prompt": "A patient with an uncorrected +2.00 D hyperopic error may use accommodation at distance because:",
+    "options": ["The eye must add converging power to focus", "The retina moves forward voluntarily", "The cornea becomes opaque", "The pupil produces minus power"],
+    "correctIndex": 0,
+    "rationale": "Accommodation adds plus power and may compensate for some hyperopic defocus, depending on the patient.",
+    "topic": "Ocular anatomy & refractive conditions",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "iv-01",
+    "prompt": "Which instrument is commonly used to verify spectacle lens power?",
+    "options": ["Lensometer", "Pupillometer", "Keratometer", "Tonometer"],
+    "correctIndex": 0,
+    "rationale": "A lensometer measures or verifies sphere, cylinder, axis, add, and prism in spectacle lenses.",
+    "topic": "Instrumentation & verification",
+    "difficulty": "foundation",
+    "source": "curated"
+  },
+  {
+    "id": "iv-02",
+    "prompt": "Before verifying a lens, a manual lensometer should be checked for:",
+    "options": ["A zero reading with no lens present", "Maximum prism at all times", "A permanently blurred target", "The patient’s visual acuity"],
+    "correctIndex": 0,
+    "rationale": "A zero check helps identify instrument offset before lens measurements are taken.",
+    "topic": "Instrumentation & verification",
+    "difficulty": "foundation",
+    "source": "curated"
+  },
+  {
+    "id": "iv-03",
+    "prompt": "Which instrument is designed to measure interpupillary distance?",
+    "options": ["Pupillometer", "Lens clock", "Thickness gauge", "Frame warmer"],
+    "correctIndex": 0,
+    "rationale": "A pupillometer is used to obtain binocular or monocular pupillary-distance measurements.",
+    "topic": "Instrumentation & verification",
+    "difficulty": "foundation",
+    "source": "curated"
+  },
+  {
+    "id": "iv-04",
+    "prompt": "A lens clock is primarily used to estimate:",
+    "options": ["Surface curvature", "Lens transmittance", "Patient acuity", "Frame PD"],
+    "correctIndex": 0,
+    "rationale": "A lens clock estimates the curvature or surface power of a lens surface.",
+    "topic": "Instrumentation & verification",
+    "difficulty": "foundation",
+    "source": "curated"
+  },
+  {
+    "id": "iv-05",
+    "prompt": "When verifying cylinder power on a manual lensometer, the two principal target-line sets are focused:",
+    "options": ["Separately", "Only after removing the lens stop", "At exactly the same drum reading", "By changing frame color"],
+    "correctIndex": 0,
+    "rationale": "The difference between the two principal focal readings gives cylinder power.",
+    "topic": "Instrumentation & verification",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "iv-06",
+    "prompt": "Which verification step best detects unwanted vertical prism imbalance between finished lenses?",
+    "options": ["Compare prism readings at the specified reference points", "Compare temple colors", "Measure bridge width only", "Inspect the case label"],
+    "correctIndex": 0,
+    "rationale": "Prism readings at the prescribed reference locations reveal unwanted vertical imbalance.",
+    "topic": "Instrumentation & verification",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "iv-07",
+    "prompt": "Why should the lens be held firmly against the lensometer stop?",
+    "options": ["To establish a consistent measurement plane", "To increase lens refractive index", "To erase the prescription", "To change the cylinder axis"],
+    "correctIndex": 0,
+    "rationale": "Consistent contact with the stop helps control position and vertex-distance-related measurement error.",
+    "topic": "Instrumentation & verification",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "iv-08",
+    "prompt": "When measuring a progressive addition lens, distance and near powers should be checked at:",
+    "options": ["Their designated reference points", "Any two points on the eyewire", "The frame hinges", "The same random edge point"],
+    "correctIndex": 0,
+    "rationale": "Progressive markings identify reference points intended for reliable distance and near verification.",
+    "topic": "Instrumentation & verification",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "iv-09",
+    "prompt": "A lensometer reads +1.00 D on one principal meridian and +2.50 D on the other. In plus-cylinder form, the prescription is:",
+    "options": ["+1.00 +1.50 D", "+2.50 +1.50 D", "+1.00 −1.50 D", "+2.50 −1.00 D"],
+    "correctIndex": 0,
+    "rationale": "The lower plus reading is the sphere and the difference, +1.50 D, is the plus cylinder.",
+    "topic": "Instrumentation & verification",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "iv-10",
+    "prompt": "During manual lensometry, the power drum moves from −1.00 D to −3.00 D between principal meridians. What is the cylinder power in minus-cylinder form?",
+    "options": ["−2.00 D", "+2.00 D", "−4.00 D", "+4.00 D"],
+    "correctIndex": 0,
+    "rationale": "The second reading minus the first is −3.00 − (−1.00) = −2.00 D.",
+    "topic": "Instrumentation & verification",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "iv-11",
+    "prompt": "Why can measuring a high-power lens away from the prescribed reference point produce a misleading result?",
+    "options": ["Decentration can introduce prism into the reading", "The lens material instantly changes", "The axis markings disappear permanently", "The frame PD becomes zero"],
+    "correctIndex": 0,
+    "rationale": "Prentice’s rule shows that measuring away from the optical reference point introduces prismatic effect.",
+    "topic": "Instrumentation & verification",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "iv-12",
+    "prompt": "A manual lensometer target cannot be sharply focused with no lens present. What is the best next step?",
+    "options": ["Check eyepiece focus and instrument calibration before measuring", "Record every lens as plano", "Increase frame wrap", "Estimate power from lens color"],
+    "correctIndex": 0,
+    "rationale": "The observer and instrument should be focused and zeroed before reliable lens readings are attempted.",
+    "topic": "Instrumentation & verification",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "sr-07",
+    "prompt": "Why should eyewear records document the product delivered and relevant measurements?",
+    "options": ["To support continuity and accurate follow-up", "To replace all current regulations", "To guarantee a medical outcome", "To eliminate the need for verification"],
+    "correctIndex": 0,
+    "rationale": "Clear records support communication, troubleshooting, and appropriate follow-up while requirements vary by jurisdiction.",
+    "topic": "Safety & regulatory basics",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "sr-08",
+    "prompt": "If a lens arrives with an unfamiliar safety marking, the dispenser should:",
+    "options": ["Verify the marking against current authoritative documentation", "Assume it meets every hazard class", "Remove it before inspection", "Promise impact protection without checking"],
+    "correctIndex": 0,
+    "rationale": "Unfamiliar markings should be verified rather than interpreted from appearance or assumption.",
+    "topic": "Safety & regulatory basics",
+    "difficulty": "applied",
+    "source": "curated"
+  },
+  {
+    "id": "sr-09",
+    "prompt": "A workplace has both impact and chemical-splash hazards. Eyewear selection should be based on:",
+    "options": ["A current hazard assessment covering both exposures", "Impact resistance alone", "Lens color alone", "The least expensive ordinary frame"],
+    "correctIndex": 0,
+    "rationale": "Multiple hazards require protection selected for the full assessed exposure, not a single feature.",
+    "topic": "Safety & regulatory basics",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "sr-10",
+    "prompt": "Why is the phrase “shatterproof lens” inappropriate in patient communication?",
+    "options": ["No lens can be promised never to break under every condition", "Only glass lenses can break", "It describes ultraviolet transmission", "It is a cylinder-axis term"],
+    "correctIndex": 0,
+    "rationale": "Impact resistance is conditional; absolute claims can misrepresent the protection any lens provides.",
+    "topic": "Safety & regulatory basics",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "sr-11",
+    "prompt": "When an eyewear standard has been revised, which approach is most responsible?",
+    "options": ["Consult the current version and applicable local requirements", "Use whichever version is easiest to remember", "Rely on an undated summary", "Assume revisions never affect practice"],
+    "correctIndex": 0,
+    "rationale": "Current primary standards and jurisdictional requirements are the appropriate basis for safety decisions.",
+    "topic": "Safety & regulatory basics",
+    "difficulty": "challenge",
+    "source": "curated"
+  },
+  {
+    "id": "sr-12",
+    "prompt": "A customer requests ordinary dress eyewear for a task requiring certified protection. The dispenser should:",
+    "options": ["Explain the limitation and direct them to suitable compliant protection", "Describe the dress frame as equivalent", "Remove all product markings", "Guarantee the dress eyewear for the hazard"],
+    "correctIndex": 0,
+    "rationale": "Ordinary eyewear should not be represented as certified protection; the identified hazard calls for suitable compliant equipment.",
+    "topic": "Safety & regulatory basics",
+    "difficulty": "challenge",
+    "source": "curated"
   }
 ]

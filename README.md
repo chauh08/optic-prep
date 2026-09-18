@@ -1,7 +1,10 @@
 # OpticPrep
 
 OpticPrep is an independent Streamlit study app for ABO Basic Certification candidates. It
-ships with 33 original practice questions and works without an account, database, or AI token.
+ships with 97 original practice questions and works without an account, database, or AI token.
+The bank covers seven topics, with foundation, applied, and challenge questions in each:
+optics fundamentals, ophthalmic lenses, frame fitting and measurements, dispensing, ocular
+anatomy and refractive conditions, instrumentation and verification, and safety basics.
 
 > **Educational disclaimer:** OpticPrep is not affiliated with or endorsed by ABO-NCLE. It
 > does not contain, reproduce, or claim to predict real examination content. Regulatory and
@@ -83,7 +86,9 @@ Omit the token for curated-only operation.
 ## Architecture
 
 - `app.py` — setup, one-at-a-time quiz, feedback, results, review, and session flow.
-- `opticprep/questions.json` — 33 original curated questions.
+- `opticprep/questions.json` — 85 independently authored curated questions across seven topics.
+- `opticprep/variants.py` — 12 deterministic variants from original numeric templates; values,
+  answer choices, and rationales are calculated locally and require no external source.
 - `opticprep/models.py` — strict domain and AI response schemas.
 - `opticprep/quiz.py` — selection, deduplication, and scoring.
 - `opticprep/ai.py` — server-side GitHub Models REST boundary and validation.
